@@ -1,4 +1,6 @@
 {
+  "xsappname" : "capbooks",
+  "tenant-mode": "dedicated",
   "scopes": [
     {
       "name": "$XSAPPNAME.admin",
@@ -15,5 +17,17 @@
       ],
       "attribute-references": []
     }
-  ]
+  ],
+  "oauth2-configuration": {
+    "credential-types": [
+        "binding-secret",
+        "x509"
+    ],
+    "redirect-uris": [
+        "https://*.cfapps.us10-001.hana.ondemand.com/**",
+        "https://*.cfapps.us10-001.hana.ondemand.com/login/callback",
+        "https://*.applicationstudio.cloud.sap/**",
+         "https://localhosty:5000/**"
+    ]
+}
 }

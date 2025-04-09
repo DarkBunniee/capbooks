@@ -18,6 +18,8 @@
   },
   "scripts": {
     "start": "cds-serve",
+    "build": "npx mbt build",
+    "deploy": "cf deploy mta_archives/capbooks_1.0.0.mtar",
     "hana-deploy": "cds deploy --to hana:caphana-dev"
   },
   "sapux": [

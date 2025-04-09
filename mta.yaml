@@ -24,7 +24,7 @@ modules:
         properties:
           srv-url: ${default-url}
     requires:
-      - name: capbooks-db
+      - name: caphana-dev
       - name: capbooks-auth
 
   - name: capbooks-db-deployer
@@ -33,7 +33,7 @@ modules:
     parameters:
       buildpack: nodejs_buildpack
     requires:
-      - name: capbooks-db
+      - name: caphana-dev
 
   - name: capbooks
     type: approuter.nodejs
@@ -57,7 +57,7 @@ modules:
           app-uri: ${default-uri}
 
 resources:
-  - name: capbooks-db
+  - name: caphana-dev
     type: com.sap.xs.hdi-container
     parameters:
       service: hana
@@ -69,5 +69,5 @@ resources:
       service-plan: application
       path: ./xs-security.json
       config:
-        xsappname: capbooks-${org}-${space}
+        xsappname: capbooks
         tenant-mode: dedicated
